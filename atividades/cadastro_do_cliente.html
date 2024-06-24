@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <!-- Principal CSS do Bootstrap -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>cadastro do cliente</title>
+    <h2 class="mb-3" style="color: rgb(39, 97, 97);">Cadastro do cliente</h2>
+</head>
+
+<body style="text-align: center; background-color: grey;">
+    <div class="row">
+        <form>
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required maxlength="45" required>
+            </div>
+                <br>
+                <div class="form-group">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" required
+                        maxlength="45" required> 
+                        <div>
+                            <br>
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="email" required maxlength="45" required>
+                        <div>
+                            <br>
+                            <label for="Telefone">Telefone</label>
+                            <input type="text" name="telefone" id="telefone" required maxlength="45" required>
+
+                        </div>
+                        <br>
+                        <div>
+                            <label for="profissao">Profissão</label>
+                            <input type="text" name="profissao" id="profissao" required maxlength="45" required>
+                            <select id="profissao" required="">
+                                <option value="">Escolha...</option>
+                                <option>Professor(a)</option>
+                                <option>Médico(a)</option>
+                                <option>Operário(a)</option>
+                                <option>Polícia</option>
+                                <option>Cozinheiro(a)</option>
+                            </select>
+
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <label class="form-check-label" for="invalidCheck2"> "Autorizo o envio de promoções via
+                                    WhatsApp."</label>
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">limpar</button>
+                        </div>
+
+
+        </form>
+
+    </div>
+</body>
+
+</html>
