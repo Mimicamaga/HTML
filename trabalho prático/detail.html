@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="/detal.html" target="_blank"></a>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <title>trabalho prático </title>
+    <style>
+        .calculadora {
+            margin-top: 40 px;
+            border: solid 1px D#000;
+            padding: 20px;
+            background-color: #0000ee;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px 0#941414;
+        }
+
+        .btn {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            box-shadow: 1px 1px 1px #00e;
+        }
+
+        .clear {
+            width: 130px;
+        }
+
+        .enter {
+            height: 130px;
+        }
+
+        .zero {
+            width: 130px;
+        }
+
+        .resultado {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: solid 1px C#000;
+            box-shadow: 1px 1px 1px #000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        footer {
+            background-color: lightslategrey;
+            color: aliceblue;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .caixa {
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://miro.medium.com/v2/resize:fit:1024/1*398O5N4ACHsmtsQfjOgDww.jpeg" width="70"
+                    height="70">
+            </a>
+            <nav class="navbar">
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#home" class="nav-item nav-link active">Home</a></li>
+                    <li><a href="#calculadora" class="nav-item nav-link active">Calculadora</a></li>
+                    <li><a href="#listadetarefa" class="nav-item nav-link px-2">lista de tarefa</a></li>
+                    <li><a href="#formulario" class="nav-item nav-link  px-2">formulario</a></li>
+                </ul>
+            </nav>
+    </div>
+    <select>
+        <h1>calculadora</h1>
+        <div class="row">
+            <input id="resultado" type="text">
+            <div class="row">
+                <button onclick="calcular('acao','c')" type="button"
+                    class="btn btn-dark btn-lg clear font-weight-light">C</button>
+                <button onclick="calcular('acao','/')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">/</button>
+                <button onclick="calcular('acao','*')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">x</button>
+            </div>
+
+            <div class="row">
+                <button onclick="calcular('valor','7')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">7</button>
+                <button onclick="calcular('valor','8')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">8</button>
+                <button onclick="calcular('valor','9')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">9</button>
+                <button onclick="calcular('acao','-')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">-</button>
+            </div>
+
+            <div class="row">
+                <button onclick="calcular('valor','4')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">4</button>
+                <button onclick="calcular('valor','5')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">5</button>
+                <button onclick="calcular('valor','6')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">6</button>
+                <button onclick="calcular('acao','+')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">+</button>
+            </div>
+
+            <div class="row">
+                <button onclick="calcular('valor','1')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">1</button>
+                <button onclick="calcular('valor','2')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">2</button>
+                <button onclick="calcular('valor','3')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">3</button>
+                <button onclick="calcular('acao','=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+            </div>
+
+            <div class="row">
+                <button onclick="calcular('valor','0')" type="button"
+                    class="btn btn-dark zero btn-lg font-weight-light">0</button>
+                <button onclick="calcular('acao','.')" type="button"
+                    class="btn btn-dark btn-lg font-weight-light">.</button>
+            </div>
+        </div>
+    </select>
+    <script>
+        function calcular(tipo, valor) {
+            if (tipo === 'acao') {
+
+                if (valor === 'c') {
+                    document.getElementById('resultado').value = '';
+                }
+
+                if ((valor === '+') || (valor === '-') || (valor === '*') || (valor === '/') || (valor === '.')) {
+                    document.getElementById('resultado').value += valor;
+                }
+
+                if (valor === '=') {
+                    document.getElementById('resultado').value = eval(document.getElementById('resultado').value);
+                }
+
+            }
+            else if (tipo === 'valor') {
+                document.getElementById('resultado').value += valor;
+            }
+        }
+
+    </script>
+    <br>
+    <h1>lista de tarefa</h1>
+    <section>
+        <input type="text" id="tarefasnovas">
+        <button onclick="adicionar()">Adicione</button>
+        <ul id="tarefaslistas">
+        </ul>
+    </section>
+    <script>
+        function adicionar() {
+            const input = document.getElementById('tarefasnovas');
+            const texto = input.value.trim();
+            if (texto !== '') {
+                const lista = document.getElementById('tarefaslistas');
+                const tarefasnovas = document.createElement('li');
+                tarefasnovas.textContent = texto;
+                tarefasnovas.onclick = function () {
+                    this.classList.toggle('concluida');
+                };
+                lista.appendChild(tarefasnovas);
+                input.value = '';
+            }
+        }
+    </script>
+    <br>
+    <h1 class="display-5 m-4 text-center">Olá, faça seu contato!</h1>
+    <section>
+        <form class="row g-3" onsubmit="return validarFormulario()">
+            <div class="col-12">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text-area" class="form-control" id="nome" required="">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="text-area" class="form-control" id="email" required="">
+            </div>
+            <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="number" type="text-area" class="form-control" id="telefone" required="">
+            </div>
+            <div class="col-md-6">
+                <label for="assunto" class="form-label">Assunto</label>
+                <input type="text-area" class="form-control" id="assunto" required="">
+            </div>
+            <div class="col-md-6">
+                <label for="mensagem" class="form-label">mensagem</label>
+                <input type="text-area" class="form-control caixa" id="mensagem" required="">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" id="botao">Cadastrar</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="d-flex justify-content-between py-4 my-4 border-top" class="text">
+            <p>© 2024 Company, by:Yasmin Magalhães.Todos direitos resavados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

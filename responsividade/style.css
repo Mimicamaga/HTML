@@ -1,0 +1,10 @@
+img  { 
+width: 100%;  
+height: 100%;
+}
+figcaption {
+   color: rgb(241, 114, 241);
+}
+table, th, td {
+   border: 1px solid plum;
+}

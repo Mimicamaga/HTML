@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+     <h1>calculadora</h1>
+     Num1:
+       <input id="y" type="number"><br />
+       Num2:
+     <input id="z" type="number">
+     <br />
+<br>
+    <button onclik="dividir()">dividir</button>
+    <button onclik="subtrair()">subtrair</button>
+    <button onclik="somar()">somar</button>
+    <button onclik="multiplicar()">multiplicar</button>
+    <br>
+    
+   Resultado:<span id="resultado"></span>
+   
+       
+   <script>
+    var y = document.querySelector('#y')
+    var z = document.querySelector('#z')
+    var resultado = document.querySelector('span')
+  function somar(){
+        resultado.innerHTML = parseInt(y.value) + parseInt(z.value)
+    }
+    function subtrair(){
+        resultado.innerHTML = parseInt(y.value) - parseInt(z.value)
+    }
+    function multiplicar(){
+        resultado.innerHTML = parseInt(y.value) * parseInt(z.value)
+    }
+    function dividir(){
+        resultado.innerHTML = parseInt(y.value) / parseInt(z.value)
+    }
+    
+    </SCript>
+
+
+
+</div>
+    
+       
+</body>
+</html>

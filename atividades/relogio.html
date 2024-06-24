@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>relogio</title>
+</head>
+
+<h1>relogio digital</h1>
+<script>
+    function showTime() {
+     var time = new Date() ;
+     var hour = time.getHours();
+     var minute = time.getMinutes() ;
+     var second = time.getSeconds ();
+
+     if(hour<10) hour = "0"+hour;
+     if(minute<10) minute = "0"+minute;
+     if(second<10) second = "0"+second;
+     var tempo = hour+":"+minute+":"+second;
+
+     document.getElementById("timer").innerHTML=tempo;
+    }
+    function initTime(){
+     setInterval(showTime, 2000);
+    }
+ </script>
+</head>
+<body onLoad="initTime();">
+ <span id="timer"></span>
+</body>
+</html>

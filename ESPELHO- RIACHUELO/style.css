@@ -1,0 +1,28 @@
+banner  {
+    width: 100%;  
+    height: 95%;
+    padding: 0;
+}
+
+img { 
+    width: 100%;
+    height: 300px;
+}
+
+a {
+    padding-right: px;
+    padding-left: 20px;
+}
+figcaption {
+    height: 100px;
+}
+h2 {
+    margin-top: 20px;
+}
+
+footer{
+    background-color: lightslategrey;
+    color: aliceblue;
+    padding: 10px;
+    text-align: center;
+}

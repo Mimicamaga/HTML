@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou ìmpar</title>
+</head>
+<body>
+    <h2>digite seu numero:</h2>
+   
+    <button onClick="confimar()">confirmar</button>
+     <input type="number" id="number"></input>
+    <script>
+        function confimar() {
+            var num = document.getElementById("number").value
+            var number = Number(num)
+            if (number % 2 == 0) {
+                alert("par")
+            } else {
+                alert("ìmpar")
+            }
+        }
+    </script>
+</body>
+</html>
